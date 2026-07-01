@@ -1,4 +1,3 @@
-<!-- FILE: index.html -->
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -10,29 +9,94 @@
   <meta name="google-site-verification" content="1LXXaT3vlp2YuxuQbG1-Q3jhJd-ShXlhXP2XK7bG7DU" />
 
   <meta name="description" content="مؤسسة بلاد العز للمقاولات العامة في العلا. تنفيذ مشاريع سكنية وتجارية بجودة والتزام تام." />
-  <link rel="stylesheet" href="styles.css" />
 
-  <!-- Structured data (JSON-LD) -->
+  <style>
+    :root{
+      --gold:#c9a34e;
+      --black:#111111;
+      --beige:#f3efe6;
+      --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:var(--font-family);
+      background:var(--beige);
+      color:var(--black);
+      line-height:1.6;
+    }
+    .container{max-width:var(--max-width);margin:0 auto;padding:20px}
+
+    /* HEADER */
+    .site-header{background:var(--black);color:#fff;padding:18px 0}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-size:20px;font-weight:700;text-align:right}
+    .tagline{font-size:13px;color:#dcdcdc;margin-top:4px;text-align:right}
+    .main-nav a{color:#fff;margin:0 10px;font-size:15px;text-decoration:none}
+    @media(max-width:800px){
+      .header-inner{flex-direction:column;align-items:center}
+      .main-nav{margin-top:10px}
+    }
+
+    /* HERO */
+    .hero{
+      background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.25)),
+      url('https://images.unsplash.com/photo-1526401485004-2aa7c3a0f3c8?auto=format&fit=crop&w=1400&q=80')
+      center/cover no-repeat;
+      height:420px;display:flex;align-items:center;
+    }
+    .hero-inner{text-align:center;color:#fff;padding:30px}
+    .hero h2{font-size:34px;margin-bottom:10px}
+    .hero-desc{font-size:18px;margin-bottom:18px;max-width:900px;margin:auto}
+
+    /* BUTTONS */
+    .btn-primary{
+      background:var(--gold);color:var(--black);
+      padding:12px 20px;border-radius:8px;text-decoration:none;
+      font-weight:600;margin-right:10px;
+    }
+    .btn-secondary{
+      background:transparent;border:2px solid #fff;color:#fff;
+      padding:10px 18px;border-radius:8px;text-decoration:none;
+      font-weight:600;
+    }
+
+    /* SECTIONS */
+    .services,.projects,.about,.contact{padding:40px 0}
+    h3{font-size:22px;margin-bottom:12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+    .service{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+    .service h4{margin-bottom:8px}
+
+    /* FOOTER */
+    .site-footer{background:var(--black);color:#fff;padding:20px;text-align:center;margin-top:30px}
+    .site-footer a{color:var(--gold);text-decoration:none}
+  </style>
+
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Organization",
     "name":"مؤسسة بلاد العز للمقاولات العامة",
-    "url":"https://gffgcatnet-a11y.github.io/bilad-alizz/",
+    "url":"https://gffgcatnet-a11y.github.io/bilad-alizz1/",
     "sameAs":["https://www.tiktok.com/@biladalizz"],
     "contactPoint":[{"@type":"ContactPoint","telephone":"+966504449800","contactType":"customer service","areaServed":"SA"}]
   }
   </script>
 </head>
+
 <body>
-  <header class="site-header" role="banner">
+
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="container header-inner">
-      <div class="brand" aria-label="مؤسسة بلاد العز للمقاولات">
+      <div>
         <h1 class="logo">مؤسسة بلاد العز للمقاولات العامة</h1>
         <p class="tagline">العلا — مقاولات عامة وصيانة</p>
       </div>
 
-      <nav class="main-nav" role="navigation" aria-label="القائمة الرئيسية">
+      <nav class="main-nav">
         <a href="#services">خدماتنا</a>
         <a href="#projects">مشاريعنا</a>
         <a href="#about">من نحن</a>
@@ -41,51 +105,55 @@
     </div>
   </header>
 
-  <section class="hero" role="region" aria-labelledby="hero-title">
+  <!-- HERO -->
+  <section class="hero">
     <div class="container hero-inner">
-      <h2 id="hero-title">مشاريع متقنة. تسليم في الوقت.</h2>
+      <h2>مشاريع متقنة. تسليم في الوقت.</h2>
       <p class="hero-desc">نقدم حلول مقاولات متكاملة في العلا والوجه وتيماء مع إدارة مشروع احترافية وضمانات على التنفيذ.</p>
-      <div class="hero-cta" role="group" aria-label="أزرار الدعوة للعمل">
-        <a class="btn-primary" href="#contact">اطلب عرض سعر</a>
-        <a class="btn-secondary" href="https://www.tiktok.com/@biladalizz" target="_blank" rel="noopener noreferrer" aria-label="زيارة حساب تيك توك بلاد العز">شاهد مشاريعنا</a>
-      </div>
+
+      <a class="btn-primary" href="#contact">اطلب عرض سعر</a>
+      <a class="btn-secondary" href="https://www.tiktok.com/@biladalizz" target="_blank">شاهد مشاريعنا</a>
     </div>
   </section>
 
-  <main class="container" role="main">
-    <section id="services" class="services" aria-labelledby="services-title">
-      <h3 id="services-title">خدماتنا</h3>
-      <div class="grid" role="list">
-        <article class="service" role="listitem" aria-labelledby="s1">
-          <h4 id="s1">المقاولات العامة</h4>
-          <p>تنفيذ المباني السكنية والتجارية والبنية التحتية بجودة عالية ومعايير سلامة صارمة.</p>
-        </article>
+  <!-- SERVICES -->
+  <main class="container">
+    <section id="services" class="services">
+      <h3>خدماتنا</h3>
+      <div class="grid">
+        <div class="service">
+          <h4>المقاولات العامة</h4>
+          <p>تنفيذ المباني السكنية والتجارية والبنية التحتية بجودة عالية.</p>
+        </div>
 
-        <article class="service" role="listitem" aria-labelledby="s2">
-          <h4 id="s2">إدارة المشاريع</h4>
-          <p>إدارة متكاملة للمشاريع لضمان التسليم في الوقت والمواصفات المتفق عليها.</p>
-        </article>
+        <div class="service">
+          <h4>إدارة المشاريع</h4>
+          <p>إدارة متكاملة لضمان التسليم في الوقت والمواصفات.</p>
+        </div>
 
-        <article class="service" role="listitem" aria-labelledby="s3">
-          <h4 id="s3">الصيانة والترميم</h4>
-          <p>خدمات صيانة شاملة وترميم للمباني والمنشآت مع ضمان جودة العمل.</p>
-        </article>
+        <div class="service">
+          <h4>الصيانة والترميم</h4>
+          <p>خدمات صيانة شاملة وترميم للمباني والمنشآت.</p>
+        </div>
       </div>
     </section>
 
-    <section id="projects" class="projects" aria-labelledby="projects-title">
-      <h3 id="projects-title">مشاريعنا</h3>
-      <p>نشارك أحدث المشاريع والإنجازات على حسابنا في تيك توك. تابعنا لمشاهدة الفيديوهات والتحديثات.</p>
-      <a class="btn-secondary" href="https://www.tiktok.com/@biladalizz" target="_blank" rel="noopener noreferrer">زيارة تيك توك</a>
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+      <h3>مشاريعنا</h3>
+      <p>تابع أحدث المشاريع على حسابنا في تيك توك.</p>
+      <a class="btn-secondary" href="https://www.tiktok.com/@biladalizz" target="_blank">زيارة تيك توك</a>
     </section>
 
-    <section id="about" class="about" aria-labelledby="about-title">
-      <h3 id="about-title">من نحن</h3>
-      <p>مؤسسة بلاد العز للمقاولات العامة في العلا. نجمع بين الخبرة المحلية والتقنيات الحديثة لتنفيذ مشاريع متينة بتصاميم عصرية وخدمة ما بعد التسليم.</p>
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <h3>من نحن</h3>
+      <p>مؤسسة بلاد العز للمقاولات العامة في العلا. خبرة محلية وتقنيات حديثة لتنفيذ مشاريع متينة بتصاميم عصرية.</p>
     </section>
 
-    <section id="contact" class="contact" aria-labelledby="contact-title">
-      <h3 id="contact-title">اتصل بنا</h3>
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <h3>اتصل بنا</h3>
       <p><strong>العنوان:</strong> العلا</p>
       <p><strong>أماكن العمل:</strong> العلا، الوجه، تيماء</p>
       <p><strong>ساعات العمل:</strong> 08:00 صباحًا — 10:00 مساءً</p>
@@ -94,108 +162,11 @@
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
-      <p>© 2026 مؤسسة بلاد العز للمقاولات العامة - جميع الحقوق محفوظة</p>
-      <p><a href="https://www.tiktok.com/@biladalizz" target="_blank" rel="noopener noreferrer">تابعنا على تيك توك</a></p>
-    </div>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2026 مؤسسة بلاد العز للمقاولات العامة - جميع الحقوق محفوظة</p>
+    <p><a href="https://www.tiktok.com/@biladalizz" target="_blank">تابعنا على تيك توك</a></p>
   </footer>
+
 </body>
 </html>
-
-/* FILE: styles.css */
-:root{
-  --gold:#c9a34e;
-  --black:#111111;
-  --beige:#f3efe6;
-  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  --max-width:1100px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-  font-family:var(--font-family);
-  background:var(--beige);
-  color:var(--black);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
-.container{max-width:var(--max-width);margin:0 auto;padding:20px}
-
-/* HEADER */
-.site-header{background:var(--black);color:#fff;padding:18px 0}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-size:20px;font-weight:700;text-align:right}
-.tagline{font-size:13px;color:#dcdcdc;margin-top:4px;text-align:right}
-.main-nav{text-align:left}
-.main-nav a{color:#fff;margin:0 10px;font-size:15px;text-decoration:none}
-@media(max-width:800px){
-  .header-inner{flex-direction:column;align-items:center}
-  .main-nav{margin-top:10px}
-}
-
-/* HERO */
-.hero{
-  background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.25)), url('https://images.unsplash.com/photo-1526401485004-2aa7c3a0f3c8?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-  height:420px;display:flex;align-items:center;
-}
-.hero-inner{width:100%;text-align:center;color:#fff;padding:30px}
-.hero h2{font-size:34px;margin-bottom:10px}
-.hero-desc{font-size:18px;margin-bottom:18px;max-width:900px;margin-left:auto;margin-right:auto}
-
-/* BUTTONS */
-.btn-primary{
-  display:inline-block;background:var(--gold);color:var(--black);padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600;margin-right:10px;
-}
-.btn-primary:focus{outline:3px solid rgba(201,163,78,0.35)}
-.btn-secondary{
-  display:inline-block;background:transparent;border:2px solid #fff;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600;
-}
-.btn-secondary:focus{outline:3px solid rgba(255,255,255,0.25)}
-
-/* MAIN CONTENT */
-.services,.projects,.about,.contact{padding:40px 0}
-.services h3,.projects h3,.about h3,.contact h3{font-size:22px;margin-bottom:12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
-.service{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-.service h4{margin-bottom:8px}
-
-/* FOOTER */
-.site-footer{background:var(--black);color:#fff;padding:20px;text-align:center;margin-top:30px}
-.site-footer a{color:var(--gold);text-decoration:none}
-
-/* RESPONSIVE */
-@media(max-width:700px){
-  .hero{height:360px}
-  .hero h2{font-size:26px}
-  .hero-desc{font-size:16px}
-  .header-inner{padding:0 10px}
-}
-
-/* FILE: robots.txt */
-# robots.txt
-User-agent: *
-Allow: /
-Sitemap: https://gffgcatnet-a11y.github.io/bilad-alizz/sitemap.xml
-
-<!-- FILE: sitemap.xml -->
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://gffgcatnet-a11y.github.io/bilad-alizz/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-</urlset>
-
-<!-- FILE: README.md -->
-# bilad-alizz
-
-موقع مؤسسة بلاد العز للمقاولات العامة — نسخة GitHub Pages.
-
-**محتوى:** صفحة رئيسية، خدمات، مشاريع، من نحن، اتصل بنا.  
-**مقر:** العلا. أماكن العمل: العلا، الوجه، تيماء.  
-**اتصال:** 0504449800 — biladalezz@gmail.com
-
-**نشر:** GitHub Pages (https://gffgcatnet-a11y.github.io/bilad-alizz/)
